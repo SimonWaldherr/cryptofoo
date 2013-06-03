@@ -1,0 +1,36 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="./cryptofoo.js"></script>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>input</th>
+        <th><input name="" onkeyup="calcHashes(this.value);" type="text"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Whirlpool</td>
+        <td id="whirlpool"></td>
+      </tr>
+      <tr>
+        <td>md5</td>
+        <td id="md5"></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <script>
+    function calcHashes(str) {
+      document.getElementById('whirlpool').innerHTML = cryptofoo.whirlpool(str);
+      document.getElementById('md5').innerHTML = cryptofoo.md5(str);
+    }
+  </script>
+</body>
+</html>
