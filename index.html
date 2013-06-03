@@ -1,10 +1,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title></title>
-  
+  <title>cryptofoo</title>
   <link href="style.css" rel="stylesheet" type="text/css">
-  <script src="./cryptofoo.js"></script>
 </head>
 <body>
   <table>
@@ -25,11 +23,26 @@
       </tr>
     </tbody>
   </table>
-  
+  <script src="./cryptofoo.js"></script>
+  <script src="http://simonwaldherr.github.io/majaX.js/majax.js"></script>
   <script>
     function calcHashes(str) {
-      document.getElementById('whirlpool').innerHTML = cryptofoo.whirlpool(str);
-      document.getElementById('md5').innerHTML = cryptofoo.md5(str);
+      majaX({url:'http://cdn.simon.waldherr.eu/projects/cryptofoo/hash.php', method:'GET', type:'json', data:{string:str}}, function(json) {
+        var jswhirlpool = cryptofoo.whirlpool(str);
+        var jsmd5       = cryptofoo.md5(str);
+        if (json.whirlpool === jswhirlpool) {
+          document.getElementById('whirlpool').innerHTML = '<span style="background:green;">'+jswhirlpool+'</span>';
+        } else {
+          document.getElementById('whirlpool').innerHTML = '<span style="background:green;">'+jswhirlpool+'</span>';
+          console.log([json.whirlpool, jswhirlpool]);
+        }
+        if (json.md5 === jsmd5) {
+          document.getElementById('md5').innerHTML = '<span style="background:green;">'+jsmd5+'</span>';
+        } else {
+          document.getElementById('md5').innerHTML = '<span style="background:red;">'+jsmd5+'</span>';
+          console.log([json.md5, jsmd5]);
+        }
+      });
     }
   </script>
 </body>
