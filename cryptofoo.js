@@ -7,7 +7,7 @@
  * http://simon.waldherr.eu/license/mit/
  *
  * Github:  https://github.com/simonwaldherr/cryptofoo/
- * Version: 0.1.1
+ * Version: 0.1.2
  */
 
 //based on code from http://blog.faultylabs.com/files/md5.js and http://www.sunsean.com/Whirlpool.js (both under public domain)

@@ -4,9 +4,9 @@ a good compromise between speed and validity to hash and encrypt (in future vers
 
 ##about
 
-License: MIT  
-Version: 0.1.1  
-Date: 6.2013  
+License:   MIT  
+Version: 0.1.2  
+Date:  07.2013  
 
 ##howto
 
